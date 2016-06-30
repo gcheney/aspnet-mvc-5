@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" type="text/css"  rel="stylesheet" />
+    <title>Index</title>
+    @*ASP comment - and internal stylesheet*@
+    <style>
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+        body {
+            background-color: #F1F1F1;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-center">
+        <h2>@ViewBag.Greeting, fuckers!</h2>
+        <h3>We're going to have an exciting party!</h3>
+        <h4>And you are Invited</h4>
+        <div class="btn btn-success">
+            @Html.ActionLink("RSVP Now", "RsvpForm")
+        </div>
+    </div>
+</body>
+</html>

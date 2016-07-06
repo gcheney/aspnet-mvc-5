@@ -1,0 +1,32 @@
+﻿@using Razor.Models
+@model Razor.Models.Product[]
+
+@{
+    ViewBag.Title = "Demp Array";
+}
+
+@if (Model.Length > 0)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>$@product.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h2>No product data</h2>
+}
+

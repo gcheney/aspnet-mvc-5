@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/content/styles.css" rel="stylesheet" type="text/css"/>
+    <title>Action Name</title>
+</head>
+<body>
+    <div> 
+        <p>The controller is: @ViewBag.Controller</p>
+        <p>The action is: @ViewBag.Action</p>
+        <p>The custom variable is: @ViewBag.CustomVariable</p>
+        <div>
+            @Html.ActionLink("This is an outgoing URL on the Home Controller",
+                    "CustomVariable", "Home", new { id = "Hello" },
+                    new { id = "myAnchorID", @class = "myCSSClass" })
+        </div>
+        <div>
+            @Html.ActionLink("This targets another controller", "Index", "Customer")
+        </div>
+        <div>
+            @Html.ActionLink("This is a fully qualified URL", "Index", "Home",
+                "https", "myserver.domainname.com", "myFragmentName",
+                 new { id = "myId" }, new { id = "myAnchorID" })
+        </div>
+        <div>
+            This is a plain 'ol URL:
+            @Url.Action("Index", "Home", new { id = "myId" })
+        </div>
+        <div>
+            @Html.ActionLink("Click Me", "GetLegacyURL", "Legacy",
+                         new { legacyUrl = "~/articles/Windows_3.1_Overview.html" }, null)
+        </div>
+        <div>
+            @Html.ActionLink("Go to Admin Area", "Index", new { area = "Admin" });
+        </div>
+    </div>
+</body>
+</html>

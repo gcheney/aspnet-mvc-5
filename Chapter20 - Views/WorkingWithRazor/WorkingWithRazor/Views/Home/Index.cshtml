@@ -1,0 +1,49 @@
+﻿@model string[]
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+    @section Header {
+        <div class="view">
+            @foreach (string str in new[] { "Home", "List", "Edit" })
+            {
+                @Html.ActionLink(str, str, null, new { style = "margin: 5px"})
+            }
+        </div>
+    }
+
+    @*---------BODY START------------------*@
+    <div class="view"> 
+        This is a list of fruit names:
+
+        @foreach (string name in Model)
+        {
+            <span><b>@name</b></span>
+        }
+    </div>
+
+    @Html.Partial("_MyPartial")
+
+    @Html.Partial("_StronglyTypedPartial", new [] {"Apple", "Orange", "Pear" })
+
+    @Html.Action("Time", "Home", new { time = DateTime.Now})
+
+    @*---------BODY END------------------*@
+
+    @section Footer {
+        <div class="view">
+            This is the footer
+        </div>
+    }
+</body>
+</html>

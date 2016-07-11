@@ -1,0 +1,11 @@
+﻿@model IEnumerable<string>
+
+<div>
+    <p>This is the message from the strongly typed partial view</p>
+    <ul>
+        @foreach (string str in @Model)
+        {
+            <li>@str</li>
+        }
+    </ul>
+</div>
